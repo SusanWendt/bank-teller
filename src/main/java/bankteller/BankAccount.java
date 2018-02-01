@@ -22,7 +22,6 @@ public class BankAccount {
 	}
 
 	public String getAccountNum() {
-
 		return accountNum;
 	}
 
@@ -48,7 +47,5 @@ public class BankAccount {
 		} else {
 			balance = balance - 0;
 		}
-
 	}
-
 }

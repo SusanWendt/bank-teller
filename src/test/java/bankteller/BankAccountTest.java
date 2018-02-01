@@ -46,4 +46,12 @@ public class BankAccountTest {
 		double result = underTest.getBalance();
 		Assert.assertEquals(75, result, 0.01);
 	}
+//	//see notes to make tests more readable 	
+//	@Test
+//	public void shouldReadNicely() {
+//		BankAccount underTest = new BankAccount("number", "type", 0);
+//		
+//		String asString = underTest.toString();
+//		assertThat(asString, is("number (type)"));
+//	}
 }
