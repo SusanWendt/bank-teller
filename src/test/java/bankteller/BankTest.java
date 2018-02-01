@@ -32,7 +32,7 @@ public class BankTest {
 		BankAccount account = new BankAccount(accountNum, "savings", 100.00);
 
 		underTest.addAccount(account);
-		underTest.removeAccount(accountNum);
+		underTest.close(accountNum);
 		BankAccount found = underTest.getAccountByAccountNum(accountNum);
 		Assert.assertEquals(null, found);
 	}
