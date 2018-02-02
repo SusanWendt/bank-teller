@@ -7,18 +7,18 @@ public class BankAccount {
 	// [X] create Constructor that handles the instance data in order above
 	// [X] create appropriate methods needed for bank transactions
 
-	String accountNum;
-	String type;
-	double balance;
-
-	public BankAccount() {
-
-	}
-
+	private String accountNum;
+	private String type;
+	private double balance;
+	
 	public BankAccount(String accountNum, String type, double balance) {
 		this.accountNum = accountNum;
 		this.type = type;
 		this.balance = balance;
+	}
+
+	public BankAccount() {
+
 	}
 
 	public String getAccountNum() {
@@ -28,7 +28,10 @@ public class BankAccount {
 	public String getType() {
 		return type;
 	}
-
+	@Override
+	public String toString() {
+		return "(" + accountNum + ") "+ type + " " + balance;
+	}
 	public double getBalance() {
 		return balance;
 	}
@@ -41,7 +44,7 @@ public class BankAccount {
 		}
 	}
 
-	public void withdraw(int amountToWithdraw) {
+	public void withdraw(double amountToWithdraw) {
 		if (amountToWithdraw > 0) {
 			balance = balance - amountToWithdraw;
 		} else {
