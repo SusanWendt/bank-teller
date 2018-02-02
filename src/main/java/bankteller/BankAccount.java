@@ -30,7 +30,7 @@ public class BankAccount {
 	}
 	@Override
 	public String toString() {
-		return "(" + accountNum + ") "+ type + " " + balance;
+		return "(" + accountNum + ") "+ type + " $" + balance;
 	}
 	public double getBalance() {
 		return balance;

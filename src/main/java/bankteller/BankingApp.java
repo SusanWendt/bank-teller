@@ -6,13 +6,12 @@ public class BankingApp {
 
 	public static void main(String[] args) {
 		// [X] A Bank object called myBank
-		// [ ] A BankAccount object called account1 with the following properties
-		// ("1111","Checking",500.00)
-		// [ ] A BankAccount object called account2 with the following properties
-		// ("2222","Savings",2500.00)
+		// [ ] A BankAccount object called account1 ("1111","Checking",500.00)
+		// [ ] A BankAccount object called account2 ("2222","Savings",2500.00)
 		// [X] Have myBank add the 2 accounts to the map
 		// [X] Set up a user interface to give similar output to the console:
-		// [ ] Note: When displaying your accounts use an enhanced for loop
+		// [X] Note: When displaying your accounts use an enhanced for loop
+
 		Scanner input = new Scanner(System.in);
 
 		Bank myBank = new Bank();
@@ -21,10 +20,7 @@ public class BankingApp {
 		myBank.addAccount(new BankAccount("2222", "Savings", 2500.00));
 
 		System.out.println("Here are your accounts at our bank: ");
-
-		System.out.println(myBank.getAccountByAccountNum("1111"));
-		System.out.println(myBank.getAccountByAccountNum("2222"));
-
+		myBank.showAccounts();
 		String option = "";
 
 		do {
@@ -38,8 +34,7 @@ public class BankingApp {
 
 			if (optionEntered.equals("1")) {
 				System.out.println("Which account would you like to deposit to? ");
-				System.out.println(myBank.getAccountByAccountNum("1111"));
-				System.out.println(myBank.getAccountByAccountNum("2222"));
+				myBank.showAccounts();
 				String accountChosen = input.nextLine();
 				System.out.println("Enter deposit amount: ");
 				double depositAmount = input.nextDouble();
@@ -50,8 +45,7 @@ public class BankingApp {
 				input.nextLine();
 			} else if (optionEntered.equals("2")) {
 				System.out.println("Which account would you like to withdraw from? ");
-				System.out.println(myBank.getAccountByAccountNum("1111"));
-				System.out.println(myBank.getAccountByAccountNum("2222"));
+				myBank.showAccounts();
 				String accountChosen = input.nextLine();
 				System.out.println("Enter withdraw amount: ");
 				double withdrawAmount = input.nextDouble();
@@ -62,16 +56,14 @@ public class BankingApp {
 				input.nextLine();
 			} else if (optionEntered.equals("3")) {
 				System.out.println("balances:");
-				System.out.println(myBank.getAccountByAccountNum("1111"));
-				System.out.println(myBank.getAccountByAccountNum("2222"));
+				myBank.showAccounts();
 			} else if (optionEntered.equals("4")) {
 				System.out.println("You have chosen to close an account. ");
 				System.out.println("Type 'continue' to close or type 'back' to return to menu");
 				String choice = input.nextLine();
 				if (choice.equals("continue")) {
 					System.out.println("Which account would you like to close? ");
-					System.out.println(myBank.getAccountByAccountNum("1111"));
-					System.out.println(myBank.getAccountByAccountNum("2222"));
+					myBank.showAccounts();
 					String accountChosen = input.nextLine();
 					System.out.println("You have chosen to close " + accountChosen);
 					System.out.println("Type 'confirm' to close or type 'back' to return to menu");
@@ -89,7 +81,6 @@ public class BankingApp {
 				System.exit(0);
 			}
 		} while (!option.equals("-1"));
-
 		input.close();
 	}
 }

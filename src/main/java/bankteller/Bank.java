@@ -20,12 +20,11 @@ public class Bank {
 	public Collection<BankAccount> accounts() {
 		return accounts.values();
 	}
-//	public showAccounts(String accountNum) {
-//		for (Entry<String, BankAccount> entry : accounts.entrySet()) {
-//			return entry.getKey();
-//			return entry.getValue();
-//		}
-//	}
+	public void showAccounts() {
+		for (Entry<String, BankAccount> entry : accounts.entrySet()) {
+			System.out.println( entry.getKey() + entry.getValue() + entry.getValue().getBalance());
+		}
+	}
 
 	public void close(String accountNum) {
 		accounts.remove(accountNum);
