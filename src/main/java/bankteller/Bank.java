@@ -22,7 +22,7 @@ public class Bank {
 	}
 	public void showAccounts() {
 		for (Entry<String, BankAccount> entry : accounts.entrySet()) {
-			System.out.println( entry.getKey() + entry.getValue() + entry.getValue().getBalance());
+			System.out.println(entry.getValue());
 		}
 	}
 
